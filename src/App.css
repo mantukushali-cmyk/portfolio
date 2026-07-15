@@ -1,0 +1,162 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ==========================
+   Global Styles
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:#f8fafc;
+    color:#0f172a;
+    overflow-x:hidden;
+}
+
+/* ==========================
+   Sections
+========================== */
+
+section{
+    padding:100px 8%;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ==========================
+   Typography
+========================== */
+
+h1,
+h2,
+h3,
+h4{
+    color:#0f172a;
+}
+
+p{
+    color:#475569;
+    line-height:1.8;
+}
+
+a{
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* ==========================
+   Section Title
+========================== */
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:20px;
+    color:#0f172a;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:#64748b;
+    max-width:700px;
+    margin:0 auto 60px;
+    font-size:18px;
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:14px 28px;
+
+    background:#2563eb;
+    color:white;
+
+    border:none;
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+    font-weight:600;
+
+    transition:.3s ease;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
+
+/* ==========================
+   Scrollbar
+========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#e2e8f0;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2563eb;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#1d4ed8;
+}
+
+/* ==========================
+   Selection
+========================== */
+
+::selection{
+    background:#2563eb;
+    color:white;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:768px){
+
+section{
+    padding:80px 6%;
+}
+
+.section-title{
+    font-size:34px;
+}
+
+.section-subtitle{
+    font-size:16px;
+}
+
+}
