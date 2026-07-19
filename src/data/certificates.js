@@ -5,7 +5,7 @@ const certificates = [
     issuer: "NPTEL",
     year: "2025",
     category: "Programming",
-    pdf: "/certificates/python.pdf"
+    pdf: "/certificates/nptel-python.pdf" 
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const certificates = [
     issuer: "NPTEL",
     year: "2025",
     category: "Database",
-    pdf: "/certificates/dbms.pdf"
+    pdf: "/certificates/nptel-dbms.pdf" 
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const certificates = [
     issuer: "NPTEL",
     year: "2025",
     category: "AI",
-    pdf: "/certificates/ml.pdf"
+    pdf: "/certificates/nptel-ml.pdf" 
   }
 ];
 

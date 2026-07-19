@@ -1,95 +1,214 @@
-.internship{
-    padding:100px 8%;
-    background:#ffffff;
+/* Core Layout Container */
+.internship {
+  padding: 100px 8%;
+  background: #0b0c10; /* Unified dark theme */
+  position: relative;
+  overflow: hidden;
 }
 
-.internship-card{
-    max-width:1000px;
-    margin:auto;
-    display:flex;
-    gap:30px;
-    background:#f8fafc;
-    padding:40px;
-    border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.3s;
+.internship-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.internship-header .section-title {
+  color: #ffffff !important;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
-.internship-card:hover{
-    transform:translateY(-8px);
+.title-underline {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, #a855f7, #6366f1);
+  margin: 12px auto 0;
+  border-radius: 2px;
 }
 
-.internship-icon{
-    width:80px;
-    height:80px;
-    background:#2563eb;
-    color:white;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:32px;
-    flex-shrink:0;
+/* Modern Dark Card Styling */
+.internship-card {
+  max-width: 950px;
+  margin: auto;
+  display: flex;
+  gap: 35px;
+  background: rgba(17, 19, 28, 0.7); /* Deep glassmorphism fill */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 45px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease, box-shadow 0.4s ease;
+  z-index: 1;
 }
 
-.internship-content h3{
-    font-size:28px;
-    color:#0f172a;
+/* Dynamic Ambient Glow Behind Card */
+.card-glow-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
+  border-radius: 24px;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.4s ease;
 }
 
-.internship-content h4{
-    color:#2563eb;
-    margin:10px 0 20px;
+.internship-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(168, 85, 247, 0.1);
+}
+
+/* Animated Left Icon Grid Element */
+.internship-icon-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.internship-icon {
+  width: 75px;
+  height: 75px;
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.internship-card:hover .internship-icon {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+/* Subtly looping radial pulse indicator */
+.icon-pulse-ring {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 83px;
+  height: 83px;
+  border: 2px solid rgba(99, 102, 241, 0.4);
+  border-radius: 24px;
+  animation: pulseTrack 3s infinite linear;
+  pointer-events: none;
+}
+
+/* Typography & Content Structure */
+.company-badge {
+  background: rgba(168, 85, 247, 0.1);
+  color: #c084fc;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 12px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.internship-content h3 {
+  font-size: 26px;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.internship-content h4 {
+  color: #a855f7;
+  font-size: 18px;
+  margin: 6px 0 16px;
+  font-weight: 500;
+}
+
+.meta-info-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
 }
 
 .duration,
-.location{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:#64748b;
-    margin-bottom:12px;
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #9ca3af;
+  font-size: 14px;
 }
 
-.description{
-    margin:25px 0;
-    line-height:1.8;
-    color:#475569;
+.duration svg,
+.location svg {
+  color: #6366f1;
 }
 
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
+.description {
+  margin: 20px 0 30px;
+  line-height: 1.75;
+  color: #9ca3af;
+  font-size: 15px;
 }
 
-.skills span{
-    background:#dbeafe;
-    color:#1d4ed8;
-    padding:8px 18px;
-    border-radius:25px;
-    font-size:14px;
-    font-weight:600;
+/* Interactive Pill Badges */
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-@media(max-width:768px){
-
-.internship-card{
-    flex-direction:column;
-    text-align:center;
+.skills-tags span {
+  background: rgba(30, 41, 59, 0.5);
+  color: #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.25s ease;
 }
 
-.internship-icon{
-    margin:auto;
+.skills-tags span:hover {
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: #ffffff;
+  transform: translateY(-3px);
+  border-color: transparent;
+  box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3);
 }
 
-.duration,
-.location{
-    justify-content:center;
+/* Keyframe Animations scripts */
+@keyframes pulseTrack {
+  0% { transform: scale(0.98); opacity: 0.8; }
+  50% { transform: scale(1.02); opacity: 0.4; }
+  100% { transform: scale(0.98); opacity: 0.8; }
 }
 
-.skills{
-    justify-content:center;
-}
+/* Responsive Scaling Breakpoint Rules */
+@media (max-width: 768px) {
+  .internship-card {
+    flex-direction: column;
+    padding: 30px 24px;
+    align-items: center;
+    text-align: center;
+  }
 
+  .meta-info-row {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .skills-tags {
+    justify-content: center;
+  }
+
+  .icon-pulse-ring {
+    display: none;
+  }
 }

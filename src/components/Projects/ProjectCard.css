@@ -1,0 +1,486 @@
+/* ===========================================
+   PREMIUM PROJECT CARD
+=========================================== */
+
+.premium-card {
+  position: relative;
+  overflow: hidden;
+
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 28px;
+
+  transition:
+            transform .18s ease,
+            box-shadow .35s ease;
+
+  box-shadow:
+      0 20px 45px rgba(0,0,0,.30);
+
+  transform-style: preserve-3d;
+
+  cursor: pointer;
+  transform-style:preserve-3d;
+
+    will-change:transform;
+}
+
+/* Glow */
+
+.premium-card:hover{
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45),
+        0 0 40px rgba(139,92,246,.35);
+
+}
+
+/* ===========================================
+   Animated Border
+=========================================== */
+
+.gradient-border{
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        45deg,
+        #8b5cf6,
+        #2563eb,
+        #06b6d4,
+        #8b5cf6
+    );
+
+    background-size:400% 400%;
+
+    animation:borderMove 8s linear infinite;
+
+    opacity:0;
+
+    z-index:-1;
+
+    transition:.4s;
+
+}
+
+.premium-card:hover .gradient-border{
+
+    opacity:1;
+
+}
+
+@keyframes borderMove{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+/* ===========================================
+   Browser
+=========================================== */
+
+.browser{
+
+transform:translateZ(50px);
+
+}
+
+.premium-content{
+
+transform:translateZ(35px);
+
+}
+
+.premium-content h3{
+
+transform:translateZ(70px);
+
+}
+
+.premium-content p{
+
+transform:translateZ(55px);
+
+}
+
+.premium-tech{
+
+transform:translateZ(80px);
+
+}
+
+.premium-buttons{
+
+transform:translateZ(95px);
+
+}
+/* ===========================================
+   Image
+=========================================== */
+
+.image-wrapper{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.image-wrapper img{
+
+    width:100%;
+
+    height:240px;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+    display:block;
+
+}
+
+.premium-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* Shine */
+
+.shine{
+
+    position:absolute;
+
+    top:0;
+
+    left:-150%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+}
+
+.premium-card:hover .shine{
+
+    animation:shine 1.2s;
+
+}
+
+@keyframes shine{
+
+0%{
+
+left:-150%;
+
+}
+
+100%{
+
+left:170%;
+
+}
+
+}
+
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+.browser{
+
+animation:floating 6s ease-in-out infinite;
+
+}
+
+/* ===========================================
+   Content
+=========================================== */
+
+.premium-content{
+
+    padding:28px;
+
+}
+
+.premium-content h3{
+
+    color:white;
+
+    font-size:25px;
+
+    margin-bottom:16px;
+
+    font-weight:700;
+
+}
+
+.premium-content p{
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+}
+
+/* ===========================================
+   Technology Pills
+=========================================== */
+
+.premium-tech{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin:28px 0;
+
+}
+
+.premium-tech span{
+
+animation:badgeFloat 4s ease-in-out infinite;
+
+}
+
+.premium-tech span:nth-child(2){
+
+animation-delay:.3s;
+
+}
+
+.premium-tech span:nth-child(3){
+
+animation-delay:.6s;
+
+}
+
+.premium-tech span:nth-child(4){
+
+animation-delay:.9s;
+
+}
+
+.premium-tech span:nth-child(5){
+
+animation-delay:1.2s;
+
+}
+
+@keyframes badgeFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-5px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+/* ===========================================
+   Buttons
+=========================================== */
+
+.premium-buttons{
+
+    display:flex;
+
+    gap:16px;
+
+}
+
+.premium-buttons a{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:13px 18px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.github{
+
+    background:#111827;
+
+    color:white;
+
+}
+
+.demo{
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #2563eb
+    );
+
+    color:white;
+
+}
+
+.premium-buttons a:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(139,92,246,.35);
+
+}
+
+/* ===========================================
+   Floating Glow
+=========================================== */
+
+.premium-card::after{
+
+content:"";
+
+position:absolute;
+
+width:320px;
+
+height:320px;
+
+right:-120px;
+
+top:-120px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+rgba(139,92,246,.45),
+transparent 70%);
+
+filter:blur(80px);
+
+opacity:0;
+
+transition:.4s;
+
+pointer-events:none;
+
+}
+
+.premium-card:hover::after{
+
+opacity:1;
+
+}
+
+
+
+/* ===========================================
+   Responsive
+=========================================== */
+
+@media(max-width:768px){
+
+.premium-content{
+
+padding:22px;
+
+}
+
+.premium-content h3{
+
+font-size:22px;
+
+}
+
+.image-wrapper img{
+
+height:200px;
+
+}
+
+.premium-buttons{
+
+flex-direction:column;
+
+}
+
+}

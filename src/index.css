@@ -17,11 +17,11 @@ html{
     scroll-behavior:smooth;
 }
 
-body{
-    font-family:"Poppins",sans-serif;
-    background:#f8fafc;
-    color:#0f172a;
-    overflow-x:hidden;
+body {
+  margin: 0;
+  background-color: #0f172a; /* Force global background to dark */
+  color: #f8fafc;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 /* ===========================
